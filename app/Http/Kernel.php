@@ -3,6 +3,8 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Barryvdh\Cors\HandleCors;
+use Barryvdh\Cors\HandlePreflight;
 
 class Kernel extends HttpKernel
 {
@@ -19,6 +21,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+        HandleCors::class,
+        HandlePreflight::class,
     ];
 
     /**
